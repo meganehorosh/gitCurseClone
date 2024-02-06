@@ -1,8 +1,9 @@
-#import os 123
+import os
+import shutil
 
-import pathlib
+x = os.listdir("S:/Games/minecraft/Instances/")
 
-p = pathlib.Path(__file__)
-print(p)
-
-#print(os.listdir("S:/Games/minecraft/Instances/"))
+for i in x:
+    if not os.path.exists("S:/Games/gitCurseClone/"+i):
+        os.mkdir("S:/Games/gitCurseClone/"+i)
+    shutil.copy("S:/Games/minecraft/Instances/"+i+"/minecraftinstance.json","S:/Games/gitCurseClone/"+i+"/minecraftinstance.json")
